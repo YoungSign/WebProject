@@ -1,4 +1,4 @@
-package ThreadPool;
+package threadPool;
 
 public class Worker extends Thread {
 
