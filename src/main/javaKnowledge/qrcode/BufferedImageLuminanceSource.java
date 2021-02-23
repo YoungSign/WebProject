@@ -1,4 +1,4 @@
-package QRCode;
+package qrcode;
 
 import com.google.zxing.LuminanceSource;
 
@@ -7,6 +7,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
 /**
+ * @author Young
  * 官方帮助类
  */
 public class BufferedImageLuminanceSource extends LuminanceSource {
@@ -30,7 +31,7 @@ public class BufferedImageLuminanceSource extends LuminanceSource {
         for (int y = top; y < top + height; y++) {
             for (int x = left; x < left + width; x++) {
                 if ((image.getRGB(x, y) & 0xFF000000) == 0) {
-                    image.setRGB(x, y, 0xFFFFFFFF); // = white
+                    image.setRGB(x, y, 0xFFFFFFFF);
                 }
             }
         }

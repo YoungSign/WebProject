@@ -1,4 +1,4 @@
-package threadPool;
+package threadpool;
 
 import java.util.List;
 import java.util.Vector;

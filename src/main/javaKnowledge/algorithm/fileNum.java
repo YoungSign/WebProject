@@ -2,9 +2,9 @@ package algorithm;
 
 import java.io.File;
 
-public class FileNum {
+public class fileNum {
 
-	public void FileNum(String path) {
+	public void fileNum(String path) {
 		File[] list = new File(path).listFiles();
 		int fileCount = 0;
 		int folderCount = 0;

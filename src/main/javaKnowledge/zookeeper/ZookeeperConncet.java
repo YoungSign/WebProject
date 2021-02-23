@@ -112,7 +112,7 @@ public class ZookeeperConncet implements Watcher {
      * @throws KeeperException
      * @throws InterruptedException
      */
-    public String getCTime(String path) throws KeeperException, InterruptedException {
+    public String getCtime(String path) throws KeeperException, InterruptedException {
         Stat stat = zooKeeper.exists(path, false);
         return String.valueOf(stat.getCtime());
     }

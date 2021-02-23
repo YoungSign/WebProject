@@ -1,4 +1,4 @@
-package QRCode;
+package qrcode;
 
 import com.google.zxing.*;
 import com.google.zxing.common.BitMatrix;
@@ -14,16 +14,23 @@ import java.io.OutputStream;
 import java.util.Hashtable;
 
 /**
+ * @author Young
  * 工具类
  */
-public class QRCodeUtil {
+public class QrCodeUtil {
     private static final String CHARSET = "utf-8";
     private static final String FORMAT_NAME = "JPG";
-    // 二维码尺寸
+    /**
+     * 二维码尺寸
+     */
     private static final int QRCODE_SIZE = 300;
-    // LOGO宽度
+    /**
+     * LOGO宽度
+     */
     private static final int WIDTH = 60;
-    // LOGO高度
+    /**
+     * LOGO高度
+     */
     private static final int HEIGHT = 60;
 
     private static BufferedImage createImage(String content, String imgPath, boolean needCompress) throws Exception {
@@ -44,7 +51,7 @@ public class QRCodeUtil {
             return image;
         }
         // 插入图片
-        QRCodeUtil.insertImage(image, imgPath, needCompress);
+        QrCodeUtil.insertImage(image, imgPath, needCompress);
         return image;
     }
 
@@ -57,7 +64,8 @@ public class QRCodeUtil {
         Image src = ImageIO.read(new File(imgPath));
         int width = src.getWidth(null);
         int height = src.getHeight(null);
-        if (needCompress) { // 压缩LOGO
+        // 压缩LOGO
+        if (needCompress) {
             if (width > WIDTH) {
                 width = WIDTH;
             }
@@ -67,7 +75,8 @@ public class QRCodeUtil {
             Image image = src.getScaledInstance(width, height, Image.SCALE_SMOOTH);
             BufferedImage tag = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
             Graphics g = tag.getGraphics();
-            g.drawImage(image, 0, 0, null); // 绘制缩小后的图
+            // 绘制缩小后的图
+            g.drawImage(image, 0, 0, null);
             g.dispose();
             src = image;
         }
@@ -83,15 +92,13 @@ public class QRCodeUtil {
     }
 
     public static void encode(String content, String imgPath, String destPath, boolean needCompress) throws Exception {
-        BufferedImage image = QRCodeUtil.createImage(content, imgPath, needCompress);
+        BufferedImage image = QrCodeUtil.createImage(content, imgPath, needCompress);
         mkdirs(destPath);
-        // String file = new Random().nextInt(99999999)+".jpg";
-        // ImageIO.write(image, FORMAT_NAME, new File(destPath+"/"+file));
         ImageIO.write(image, FORMAT_NAME, new File(destPath));
     }
 
     public static BufferedImage encode(String content, String imgPath, boolean needCompress) throws Exception {
-        BufferedImage image = QRCodeUtil.createImage(content, imgPath, needCompress);
+        BufferedImage image = QrCodeUtil.createImage(content, imgPath, needCompress);
         return image;
     }
 
@@ -104,7 +111,7 @@ public class QRCodeUtil {
     }
 
     public static void encode(String content, String imgPath, String destPath) throws Exception {
-        QRCodeUtil.encode(content, imgPath, destPath, false);
+        QrCodeUtil.encode(content, imgPath, destPath, false);
     }
     // 被注释的方法
     /*
@@ -114,17 +121,17 @@ public class QRCodeUtil {
      */
 
     public static void encode(String content, String destPath) throws Exception {
-        QRCodeUtil.encode(content, null, destPath, false);
+        QrCodeUtil.encode(content, null, destPath, false);
     }
 
     public static void encode(String content, String imgPath, OutputStream output, boolean needCompress)
             throws Exception {
-        BufferedImage image = QRCodeUtil.createImage(content, imgPath, needCompress);
+        BufferedImage image = QrCodeUtil.createImage(content, imgPath, needCompress);
         ImageIO.write(image, FORMAT_NAME, output);
     }
 
     public static void encode(String content, OutputStream output) throws Exception {
-        QRCodeUtil.encode(content, null, output, false);
+        QrCodeUtil.encode(content, null, output, false);
     }
 
     public static String decode(File file) throws Exception {
@@ -144,7 +151,7 @@ public class QRCodeUtil {
     }
 
     public static String decode(String path) throws Exception {
-        return QRCodeUtil.decode(new File(path));
+        return QrCodeUtil.decode(new File(path));
     }
 
 }

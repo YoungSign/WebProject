@@ -1,4 +1,4 @@
-package sessionRemove;
+package sessionremove;
 
 import java.io.Serializable;
 

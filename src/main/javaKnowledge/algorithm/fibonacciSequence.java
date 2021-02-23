@@ -2,7 +2,7 @@ package algorithm;
 
 import java.util.Scanner;
 
-public class FibonacciSequence {
+public class fibonacciSequence {
 
 	// 斐波那契数列
 	public static void main(String[] args) {

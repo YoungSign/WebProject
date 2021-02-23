@@ -1,6 +1,7 @@
-package QRCode;
+package qrcode;
 
 /**
+ * @author Young
  * 生成二维码类
  */
 public class QrCodeTest {
@@ -22,9 +23,9 @@ public class QrCodeTest {
         // 生成的二维码的路径及名称
         String destPath = "E:/qrCode/QRCode.jpg";
         //生成二维码
-        QRCodeUtil.encode(text, imgPath, destPath, true);
+        QrCodeUtil.encode(text, imgPath, destPath, true);
         // 解析二维码
-        String str = QRCodeUtil.decode(destPath);
+        String str = QrCodeUtil.decode(destPath);
         // 打印出解析出的内容
         System.out.println(str);
     }

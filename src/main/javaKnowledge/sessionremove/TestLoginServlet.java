@@ -1,4 +1,4 @@
-package sessionRemove;
+package sessionremove;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 public class TestLoginServlet extends HttpServlet {
 
+    @Override
     public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
         Object obj = session.getAttribute("user");
