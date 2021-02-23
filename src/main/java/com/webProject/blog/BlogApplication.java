@@ -1,4 +1,4 @@
-package com.webProject.blog;
+package com.webproject.blog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
