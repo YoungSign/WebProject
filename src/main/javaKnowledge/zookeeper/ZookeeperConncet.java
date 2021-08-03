@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * @author Young
+ */
 public class ZookeeperConncet implements Watcher {
 
     private ZooKeeper zooKeeper;
