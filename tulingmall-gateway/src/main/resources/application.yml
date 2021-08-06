@@ -1,0 +1,35 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: tulingmall-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.65.232:8848
+        namespace: 80a98d11-492c-4008-85aa-32d889e9b0d0
+
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      enabled: true
+      routes:
+      - id: tulingmall-member
+        uri: lb://tulingmall-member
+        predicates:
+        - Path=/member/**,/sso/**
+      - id: tulingmall-coupons
+        uri: lb://tulingmall-coupons
+        predicates:
+        - Path=/coupon/**
+      - id: tulingmall-auth
+        uri: lb://tulingmall-auth
+        predicates:
+        - Path=/oauth/**
+
+tuling:
+  gateway:
+    shouldSkipUrls:
+    - /oauth/**
+    - /sso/**

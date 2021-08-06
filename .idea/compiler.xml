@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="tulingmall-mbg" />
+        <module name="tulingmall-security" />
+        <module name="tulingmall-member" />
+        <module name="tulingmall-common" />
+        <module name="tulingmall-coupons" />
+        <module name="blog" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="blog" target="1.8" />
+      <module name="tulingmall-common" target="1.8" />
+      <module name="tulingmall-coupons" target="1.8" />
+      <module name="tulingmall-mbg" target="1.8" />
+      <module name="tulingmall-member" target="1.8" />
+      <module name="tulingmall-security" target="1.8" />
+      <module name="WebProject" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="blog" options="-parameters" />
+      <module name="tulingmall-common" options="-parameters" />
+      <module name="tulingmall-coupons" options="-parameters" />
+      <module name="tulingmall-mbg" options="-parameters" />
+      <module name="tulingmall-member" options="-parameters" />
+      <module name="tulingmall-security" options="-parameters" />
+    </option>
+  </component>
+</project>
