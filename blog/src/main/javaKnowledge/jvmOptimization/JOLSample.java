@@ -1,4 +1,4 @@
-package classLayout;
+package jvmOptimization;
 
 
 import org.openjdk.jol.info.ClassLayout;
