@@ -29,4 +29,8 @@ public class QrCodeTest {
         // 打印出解析出的内容
         System.out.println(str);
     }
+
+    public String test(){
+        return "asd";
+    }
 }

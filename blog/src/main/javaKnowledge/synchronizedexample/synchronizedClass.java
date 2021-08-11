@@ -1,9 +1,11 @@
 package synchronizedexample;
 
+/**
+ * @author admin
+ */
 public class synchronizedClass extends Thread {
 
     private static Integer i = 0;
-    private static Integer TIME = 1000000;
 
     public static synchronized void increase() {
         i++;
@@ -11,7 +13,8 @@ public class synchronizedClass extends Thread {
 
     @Override
     public void run() {
-        for (int j = 0; j < TIME; j++) {
+        int time = 1000000;
+        for (int j = 0; j < time; j++) {
             increase();
         }
     }
