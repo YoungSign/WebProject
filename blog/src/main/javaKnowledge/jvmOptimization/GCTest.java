@@ -8,6 +8,11 @@ package jvmOptimization;
  * -XX:PretenureSizeThreshold
  * -XX:+UseSerialGC
  * -XX:+ParNewGC
+ * <p>
+ * -XX:+UseG1GC
+ * -XX:+UnlockExperimentalVMOptions
+ * -XX:+PrintGCDetails
+ * -Xlog:gc*
  */
 public class GCTest {
     public static void main(String[] args) throws InterruptedException {
